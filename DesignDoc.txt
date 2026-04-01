@@ -1,0 +1,64 @@
+CodePulse AI 
+
+1) Overview
+
+CodePulse AI is a web-based automatic code review system that takes a
+GitHub repository URL and generates a structured review report using
+LLM-powered reviewer agents.
+
+Current review perspectives: - Bug analysis - Security analysis -
+Performance analysis - Architecture review
+
+The system currently uses Google Gemini API and displays results in a
+cyberpunk hacker-style dashboard.
+
+2) Architecture
+
+React Frontend → FastAPI Backend → Repo Parser → Gemini LLM → Structured
+Report
+
+Frontend - React + Vite - Custom cyberpunk CSS UI - Scan engine
+dashboard - Threat log cards
+
+Backend - FastAPI - GitHub repo parser - Prompt orchestration - Gemini
+integration - Report aggregation
+
+3) Main Workflow
+
+User enters repo URL → Frontend sends POST /review → Backend fetches
+repository files → Gemini analyzes code → Structured issues returned →
+UI renders threat log
+
+4) Key Modules
+
+-   main.py → FastAPI app setup
+-   routes/review.py → review API route
+-   services/prompts.py → role-based prompts
+-   services/reviewer_agents.py → Gemini logic + fallback handling
+-   App.jsx → dashboard UI
+-   App.css → cyberpunk styling
+
+5) Current Features
+
+-   GitHub repo input
+-   Gemini-powered review
+-   Multi-role reviewer simulation
+-   Health score + verdict
+-   Threat log issue cards
+-   Cyberpunk HUD UI
+-   Graceful rate-limit fallback
+
+6) Current Limitation
+
+-   Gemini free-tier quota can hit cooldown after repeated tests.
+
+7) Next Enhancements
+
+-   PDF export
+-   single-call quota optimization
+-   multi-LLM fallback (GPT / Claude)
+
+Product Positioning
+
+A futuristic AI-powered code intelligence platform for fast, structured,
+and visually rich repository review.
